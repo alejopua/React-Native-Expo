@@ -7,9 +7,9 @@ export const BasicTypes = () => {
 
   return (
     <>
-      <h1>Basicds Types</h1>
+      <h1>Basic Types</h1>
         <p>
-          Hello <strong>{name}</strong>, he has <strong>{age}</strong> years old. <br />
+          Hello <strong>{name}</strong>, you have <strong>{age}</strong> years old. <br />
           Status: <strong>{isActive ? 'Active' : 'Inactive'}</strong>
           <br />
           Skills: {skills.join(', ')}
