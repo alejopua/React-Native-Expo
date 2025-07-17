@@ -4,14 +4,14 @@ export const useCounter = () => {
   const [count, setCount] = useState<number>(10);
 
   const increaseBy = (value: number) => {
-  setCount(Math.max(count + value, 0));
-  }
+    setCount(Math.max(count + value, 0));
+  };
 
   return {
     // Properties
     count,
 
     //Actions
-    increaseBy
-  }
-}
+    increaseBy,
+  };
+};
