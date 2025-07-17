@@ -1,11 +1,11 @@
 import { useAuthContext } from "../context/AuthContext";
 
 export const LoginPage = () => {
-  const { hola } = useAuthContext();
-  return (
-    <>
-      <h3>Login...</h3>
-      <span>{hola}</span>
-    </>
-  );
+  const { isChecking } = useAuthContext();
+
+  if (isChecking) {
+    return <h3>Checking User...</h3>;
+  } else {
+    return <h3>Verified user</h3>;
+  }
 };
