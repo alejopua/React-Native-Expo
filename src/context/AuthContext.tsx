@@ -17,10 +17,14 @@ interface AuthState {
   user?: User;
   isChecking: boolean;
   isAuthenticated: boolean;
+
+  //Methods
+  loginWithEmailAndPassword: (email: string, password: string) => void;
+  logout: () => void;
 }
 
 interface User {
-  UserName: string;
+  name: string;
   email: string;
 }
 const AuthContext = createContext({} as AuthState);
@@ -37,6 +41,21 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     }, 2000);
   }, []);
 
+  const loginWithEmailAndPassword = (email: string, password: string) => {
+    setUser({
+      name: "Alejandro Ramirez",
+      email: email,
+    });
+
+    setStatus(AuthStatus.authenticated);
+  };
+
+  const logout = () => {
+    setUser(undefined);
+
+    setStatus(AuthStatus.unauthenticated);
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -46,6 +65,10 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
         //Getter
         isChecking: status === AuthStatus.checking,
         isAuthenticated: status === AuthStatus.authenticated,
+
+        //Method
+        loginWithEmailAndPassword,
+        logout,
       }}
     >
       {children}
