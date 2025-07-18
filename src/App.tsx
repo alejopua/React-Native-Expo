@@ -3,8 +3,8 @@
 // import { BasicFunctions } from './assets/TypeScript/BasicFunctions';
 
 // import { Counter } from "./components/Counter";
+// import { LoginPage } from "./components/LoginPage";
 import { AuthProvider } from "./context/AuthContext";
-import { LoginPage } from "./components/LoginPage";
 
 export const App = () => {
   return (
@@ -16,7 +16,7 @@ export const App = () => {
         {/* <ObjectLiterals */}
         {/* <BasicFunctions /> */}
         {/* <Counter /> */}
-        <LoginPage />
+        {/* <LoginPage /> */}
       </div>
     </AuthProvider>
   );
