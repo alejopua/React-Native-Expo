@@ -5,6 +5,7 @@
 // import { Counter } from "./components/Counter";
 // import { LoginPage } from "./components/LoginPage";
 import { AuthProvider } from "./context/AuthContext";
+import { UserPage } from "./components/UserPage";
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
         {/* <BasicFunctions /> */}
         {/* <Counter /> */}
         {/* <LoginPage /> */}
+        <UserPage />
       </div>
     </AuthProvider>
   );
