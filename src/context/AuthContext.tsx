@@ -16,6 +16,7 @@ interface AuthState {
   token?: string;
   user?: User;
   isChecking: boolean;
+  isAuthenticated: boolean;
 }
 
 interface User {
@@ -28,6 +29,7 @@ export const useAuthContext = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [status, setStatus] = useState(AuthStatus.checking);
+  const [user, setUser] = useState<User>();
 
   useEffect(() => {
     setTimeout(() => {
@@ -39,7 +41,11 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     <AuthContext.Provider
       value={{
         status: status,
+        user: user,
+
+        //Getter
         isChecking: status === AuthStatus.checking,
+        isAuthenticated: status === AuthStatus.authenticated,
       }}
     >
       {children}
