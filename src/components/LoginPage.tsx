@@ -1,11 +1,25 @@
 import { useAuthContext } from "../context/AuthContext";
 
 export const LoginPage = () => {
-  const { isChecking } = useAuthContext();
+  const { isChecking, isAuthenticated } = useAuthContext();
 
-  if (isChecking) {
-    return <h3>Checking User...</h3>;
-  } else {
-    return <h3>Verified user</h3>;
-  }
+  return (
+    <>
+      {isAuthenticated ? (
+        <>
+          <h3>Welcome</h3>
+          <button className="bg-blue-500 p-2 rounded-xl mt-2 text-white">
+            Logout
+          </button>
+        </>
+      ) : (
+        <>
+          <h3>Hello</h3>
+          <button className="bg-blue-500 p-2 rounded-xl mt-2 text-white">
+            Login
+          </button>
+        </>
+      )}
+    </>
+  );
 };
