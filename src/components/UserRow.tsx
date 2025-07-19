@@ -1,16 +1,24 @@
-export const UserRow = () => {
+import type { User } from "../interfaces/reqres.response";
+
+interface Props {
+  user: User;
+}
+
+export const UserRow = ({ user }: Props) => {
   return (
     <>
       <tr>
         <td className="p-2 align-middle whitespace-nowrap ">
-          <div className="capitalize">success</div>
+          <img
+            src={user.avatar}
+            className="rounded-full w-14"
+            alt="User Avatar"
+          ></img>
         </td>
         <td className="p-2 align-middle whitespace-nowrap ">
-          <div className="lowercase">sarah23@example.com</div>
+          {user.first_name} {user.last_name}
         </td>
-        <td className="p-2 align-middle whitespace-nowrap">
-          <div className="text-right font-medium">$1,280.00</div>
-        </td>
+        <td className="p-2 align-middle whitespace-nowrap">{user.email}</td>
       </tr>
     </>
   );
