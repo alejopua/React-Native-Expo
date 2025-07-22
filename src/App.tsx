@@ -6,6 +6,7 @@
 // import { LoginPage } from "./components/LoginPage";
 import { AuthProvider } from "./context/AuthContext";
 // import { UserPage } from "./components/UserPage";
+import { FormsPage } from "./components/FormsPage";
 
 export const App = () => {
   return (
@@ -19,6 +20,7 @@ export const App = () => {
         {/* <Counter /> */}
         {/* <LoginPage /> */}
         {/* <UserPage /> */}
+        <FormsPage />
       </div>
     </AuthProvider>
   );
